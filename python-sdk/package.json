@@ -1,0 +1,14 @@
+{
+  "name": "lovart-sdks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "coverage": "codecov"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "codecov": "^3.8.3"
+  }
+}
