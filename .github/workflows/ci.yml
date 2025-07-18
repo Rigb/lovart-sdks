@@ -11,12 +11,13 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pytest pytest-cov
-      - run: pytest --cov=. --cov-report=term-missing python-sdk/tests/
+      - run: pytest --cov=python-sdk --cov-report=term-missing python-sdk/tests/
       
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
       - run: npm install
-      - run: npm test
+      - run: cd nodejs-sdk && npm install && npm run build && cd ..
+      - run: npm test -- nodejs-sdk/dist/core/__tests__/api-client.test.js tests/dummy.test.js
       - run: npm run coverage

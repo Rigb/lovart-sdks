@@ -7,3 +7,5 @@ venv/
 .vscode/
 coverage/
 coverage/
+coverage/
+.coverage
